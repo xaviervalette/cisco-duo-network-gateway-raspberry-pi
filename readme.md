@@ -96,4 +96,17 @@ Connect to the Duo Network Gateway web interface `<DNG @IP>:8443` :
 <img width="612" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/b3487db4-fcd1-4e28-82fb-919ed9bdfb48">
  </p>
 
-Follow the installation steps
+### Generate a temporary password
+```console
+sudo docker exec network-gateway-admin reset-password
+```
+<details>
+  <summary>
+    Expected output
+  </summary>
+  
+```console
+xvalette@raspberrypi4:~/cisco-duo$ sudo docker exec network-gateway-admin reset-password
+JSBDjMJGDX8Q9XSUOKeI
+```
+  </details>
