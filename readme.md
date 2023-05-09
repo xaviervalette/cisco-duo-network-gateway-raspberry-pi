@@ -1,6 +1,10 @@
 
 # Cisco Duo Network Gateway Raspberry PI
 
+<p align="center">
+<img width="960" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/55e664a0-3b9d-4f75-8c81-73641150b4b5">
+</p>
+
 ## 1. Installation
 ### 1.1 Download the Duo Network Gateway configuration file
 ```console
