@@ -7,7 +7,7 @@ Cisco Duo Network Gateway documentation : https://duo.com/docs/dng
 
 ## Lab architecture
 <p align="center">
-<img width="961" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/33baebfa-f9b9-4c29-b9f8-9e00346175d6">
+<img width="961" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/f3c6a793-8ea6-47f9-86a2-45636a055651">
 </p>
 
 ## 1. Cisco DNG installation
@@ -123,7 +123,7 @@ bdfc487ef00b   duosecurity/network-gateway   "docker-entrypoint.s…"   35 secon
 ## 2. Cisco DNG, Duo and Azure AD configuration
 Connect to the Duo Network Gateway web interface `<Your Cisco DNG IP>:8443` :
 <p align="center">
-<img width="612" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/b3487db4-fcd1-4e28-82fb-919ed9bdfb48">
+<img width="800" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/b3487db4-fcd1-4e28-82fb-919ed9bdfb48">
  </p>
 
 ### Generate a temporary password
@@ -140,3 +140,29 @@ xvalette@raspberrypi4:~/cisco-duo$ sudo docker exec network-gateway-admin reset-
 JSBDjMJGDX8Q9XSUOKeI
 ```
   </details>
+  
+
+## Azure AD configuration
+<table>
+    <thead>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=4>
+                <img width="197" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/ec666016-e8ca-4bfa-b39d-c5161fd3ffde">
+            </td>
+            <td>User: xvalette</td>
+        </tr>
+        <tr>
+            <td>Single sign-on: SAML</td>
+        </tr>
+        <tr>
+            <td>Primary domain: valettefamily.com</td>
+        </tr>
+        <tr>
+            <td>Application Name: Duo SSO</td>
+        </tr>
+    </tbody>
+</table>
