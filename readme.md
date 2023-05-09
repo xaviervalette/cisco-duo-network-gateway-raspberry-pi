@@ -1,22 +1,45 @@
 
 # Cisco Duo Network Gateway Raspberry PI
 
-```cmd
-xvalette@raspberrypi4:~/cisco-duo$ curl -JO https://dl.duosecurity.com/network-gateway-latest.yml
+## 1. Installation
+### 1.1 Download the Duo Network Gateway configuration file
+```console
+curl -JO https://dl.duosecurity.com/network-gateway-latest.yml
+```
+<details>
+  <summary>
+    Expected output
+  </summary>
+  
+  ```console
+  xvalette@raspberrypi4:~/cisco-duo$ curl -JO https://dl.duosecurity.com/network-gateway-latest.yml
 
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100  1358  100  1358    0     0   1496      0 --:--:-- --:--:-- --:--:--  1495
-
-xvalette@raspberrypi4:~/cisco-duo$ ls
+  
+  xvalette@raspberrypi4:~/cisco-duo$ ls
 network-gateway-2.2.0.yml
-```
+  ```
+</details>
 
-Raspberry PI are ARCH64, where Duo Network Gateway expect a AMD64 system,
+### 1.2 Emulate a AMD64 architecture on the Raspberry
 
-A workaround is to use emulator :
-```
+Duo Network Gateway expect a AMD64 system, where the Raspberry is a ARCH64,
+
+A workaround is to use a Docker image maintained by `tonistiigi` : 
+
+```console
 docker run --privileged --rm tonistiigi/binfmt --install amd64 
+```
+
+<details>
+  <summary>
+    Expected output
+  </summary>
+
+```console
+xvalette@raspberrypi4:~/cisco-duo$ docker run --privileged --rm tonistiigi/binfmt --install amd64 
 
 Unable to find image 'tonistiigi/binfmt:latest' locally
 latest: Pulling from tonistiigi/binfmt
@@ -37,25 +60,36 @@ installing: amd64 OK
   ]
 }
 ```
+</details>
 
-Expected output :
-```
-xvalette@raspberrypi4:~/cisco-duo$ sudo docker images
-REPOSITORY                    TAG       IMAGE ID       CREATED        SIZE
-tonistiigi/binfmt             latest    8052ae159e7d   9 months ago   56.9MB
+### 1.3 Run the Duo Network Gateway dockers
+
+```console
+sudo docker compose -p network-gateway -f network-gateway-2.2.0.yml up -d
 ```
 
-Then you can proceed to the Duo Network Gateway installation :
-```
+<details>
+  <summary>
+    Expected output
+  </summary>
+  
+```console
 xvalette@raspberrypi4:~/cisco-duo$ sudo docker compose -p network-gateway -f network-gateway-2.2.0.yml up -d
 ```
 
-You should see the three docker up and running :
-
-```cmd
+```console
 xvalette@raspberrypi4:~/cisco-duo$ sudo docker ps
 CONTAINER ID   IMAGE                         COMMAND                  CREATED          STATUS          PORTS                                                                      NAMES
 170975b904b3   duosecurity/network-gateway   "bash -c /bin/run-co…"   35 seconds ago   Up 32 seconds   0.0.0.0:8443->443/tcp, :::8443->443/tcp                                    network-gateway-admin
 88589143fb9b   duosecurity/network-gateway   "bash -c /bin/run-co…"   35 seconds ago   Up 32 seconds   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:443->443/tcp, :::443->443/tcp   network-gateway-portal
 bdfc487ef00b   duosecurity/network-gateway   "docker-entrypoint.s…"   35 seconds ago   Up 33 seconds   6379/tcp                                                                   network-gateway-redis
 ```
+</details>
+
+## 2. Configuration
+Connect to the Duo Network Gateway web interface `<DNG @IP>:8443` :
+<p align="center">
+<img width="612" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/b3487db4-fcd1-4e28-82fb-919ed9bdfb48">
+ </p>
+
+Follow the installation steps
