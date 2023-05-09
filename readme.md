@@ -1,9 +1,37 @@
 
 # Cisco Duo Network Gateway Raspberry PI
 
+This project guide you through the deployment of a Cisco Duo Network Gateway (DNG) in a lab environment. The Cisco DNG will act as a reverse proxy to secure remote access to application without any VPN.
+
+## Lab architecture
 <p align="center">
-<img width="960" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/55e664a0-3b9d-4f75-8c81-73641150b4b5">
+<img width="961" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/33baebfa-f9b9-4c29-b9f8-9e00346175d6">
 </p>
+
+## 1. Cisco DNG installation
+<table>
+    <thead>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=4>
+              <img width="202" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/75ec6b9b-9240-4508-80e9-2f68c36f4ff3">
+            </td>
+            <td>Host: Raspberry Pi 4</td>
+        </tr>
+        <tr>
+            <td>IP: 10.142.78.4</td>
+        </tr>
+        <tr>
+            <td>FQDN: dng.valettefamily.com</td>
+        </tr>
+        <tr>
+            <td>Hostname: raspberrypi4</td>
+        </tr>
+    </tbody>
+</table>
 
 ## 1. Installation
 ### 1.1 Download the Duo Network Gateway configuration file
@@ -27,7 +55,7 @@ network-gateway-2.2.0.yml
   ```
 </details>
 
-### 1.2 Emulate a AMD64 architecture on the Raspberry
+### 1.2 Emulate a AMD64 architecture on the Raspberry (optionnal on AMD64 devices)
 
 Duo Network Gateway expect a AMD64 system, where the Raspberry is a ARCH64,
 
@@ -90,8 +118,8 @@ bdfc487ef00b   duosecurity/network-gateway   "docker-entrypoint.s…"   35 secon
 ```
 </details>
 
-## 2. Configuration
-Connect to the Duo Network Gateway web interface `<DNG @IP>:8443` :
+## 2. Cisco DNG, Duo and Azure AD configuration
+Connect to the Duo Network Gateway web interface `<Your Cisco DNG IP>:8443` :
 <p align="center">
 <img width="612" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/b3487db4-fcd1-4e28-82fb-919ed9bdfb48">
  </p>
