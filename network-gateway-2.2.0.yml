@@ -1,0 +1,58 @@
+version: '2.1'
+services:
+  portal:
+    image: duosecurity/network-gateway@sha256:97554d981ff4745c570b72b43c580c9e6a5eca3bba47457865242e1f2e820224
+    environment:
+      - APERTURE_NPROCS
+    ports:
+        - "80:80"
+        - "443:443"
+    container_name: network-gateway-portal
+    depends_on:
+        - redis
+    sysctls:
+        - net.core.somaxconn=32768
+    restart: always
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "20"
+  admin:
+    image: duosecurity/network-gateway@sha256:b9f1723d7a6e4ff977810842120e539511b0c748011cace5d3d322f4ed795269
+    ports:
+        - "8443:443"
+    container_name: network-gateway-admin
+    depends_on:
+        - redis
+    restart: always
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "20"
+  redis:
+    image: duosecurity/network-gateway@sha256:b462c393d098dd5e2b6b1c2011a288a5738797054e2573686d158d62cd85818e
+    container_name: network-gateway-redis
+    volumes:
+        - data:/data
+    restart: always
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "20"
+volumes:
+    data:
