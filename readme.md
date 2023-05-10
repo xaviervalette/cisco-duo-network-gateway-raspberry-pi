@@ -7,7 +7,7 @@ Cisco Duo Network Gateway documentation : https://duo.com/docs/dng
 
 ## Lab architecture
 <p align="center">
-<img width="961" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/f3c6a793-8ea6-47f9-86a2-45636a055651">
+<img width="961" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/00b5ef1a-b099-4af1-a2a5-1426f23b3413">
 </p>
 
 ## 1. Cisco DNG installation
