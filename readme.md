@@ -3,7 +3,7 @@
 
 This project guide you through the deployment of a Cisco Duo Network Gateway (DNG) in a lab environment. The Cisco DNG will act as a reverse proxy to secure remote access to application without any VPN.
 
-Cisco Duo Network Gateway documentation : https://duo.com/docs/dng
+[Cisco Duo Network Gateway documentation](https://duo.com/docs/dng)
 
 ## Lab architecture
 <p align="center">
