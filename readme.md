@@ -127,7 +127,8 @@ bdfc487ef00b   duosecurity/network-gateway   "docker-entrypoint.s…"   35 secon
 
 ### 2.1 Set-up the admin access to the Cisco DNG
 
-Connect to the Duo Network Gateway web interface `<Your Cisco DNG IP>:8443`
+Connect to the Duo Network Gateway web interface `https://<Your Cisco DNG IP>:8443`
+
 
 <details>
   <summary>
