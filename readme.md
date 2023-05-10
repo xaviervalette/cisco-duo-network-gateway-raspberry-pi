@@ -11,6 +11,8 @@ Cisco Duo Network Gateway documentation : https://duo.com/docs/dng
 </p>
 
 ## 1. Cisco DNG installation
+
+The Cisco DNG will be installed on a Raspberry Pi 4 running Ubuntu 22.04 LTS:
 <table>
     <thead>
         <tr>
@@ -59,7 +61,7 @@ network-gateway-2.2.0.yml
 
 ### 1.2 Emulate a AMD64 architecture on the Raspberry (optionnal on AMD64 devices)
 
-Duo Network Gateway expect a AMD64 system, where the Raspberry is a ARCH64,
+ⓘ Duo Network Gateway expect a AMD64 system, where the Raspberry is a ARCH64,
 
 A workaround is to use a Docker image maintained by `tonistiigi` : 
 
@@ -121,12 +123,16 @@ bdfc487ef00b   duosecurity/network-gateway   "docker-entrypoint.s…"   35 secon
 </details>
 
 ## 2. Cisco DNG, Duo and Azure AD configuration
+
+
+### 2.1 Set-up the admin access to the Cisco DNG
+
 Connect to the Duo Network Gateway web interface `<Your Cisco DNG IP>:8443` :
 <p align="center">
 <img width="800" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/b3487db4-fcd1-4e28-82fb-919ed9bdfb48">
  </p>
-
-### Generate a temporary password
+ 
+Generate a temporary password
 ```console
 sudo docker exec network-gateway-admin reset-password
 ```
@@ -140,7 +146,12 @@ xvalette@raspberrypi4:~/cisco-duo$ sudo docker exec network-gateway-admin reset-
 JSBDjMJGDX8Q9XSUOKeI
 ```
   </details>
-  
+
+Enter the given password in the `Set Duo Network Gateway password`page, and set your new admin password:
+<p align="center">
+<img width="800" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/57500786-5f9d-46c4-aaaa-3d4f309e6086">
+</p>
+
 
 ## Azure AD configuration
 <table>
