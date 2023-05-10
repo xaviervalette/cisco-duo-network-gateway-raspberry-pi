@@ -43,8 +43,8 @@ The Cisco DNG will be installed on a Raspberry Pi 4 running Ubuntu 22.04 LTS:
 curl -JO https://dl.duosecurity.com/network-gateway-latest.yml
 ```
 <details>
-  <summary>
-    Expected output
+  <summary> 
+   Expected output 
   </summary>
   
   ```console
@@ -129,7 +129,7 @@ bdfc487ef00b   duosecurity/network-gateway   "docker-entrypoint.s…"   35 secon
 
 Connect to the Duo Network Gateway web interface `<Your Cisco DNG IP>:8443` :
 <p align="center">
-<img width="800" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/b3487db4-fcd1-4e28-82fb-919ed9bdfb48">
+<img width="800" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/57500786-5f9d-46c4-aaaa-3d4f309e6086">
  </p>
  
 Generate a temporary password
@@ -147,10 +147,16 @@ JSBDjMJGDX8Q9XSUOKeI
 ```
   </details>
 
-Enter the given password in the `Set Duo Network Gateway password`page, and set your new admin password:
-<p align="center">
-<img width="800" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/57500786-5f9d-46c4-aaaa-3d4f309e6086">
-</p>
+Enter the given password in the `Set Duo Network Gateway password`page, and set your new admin password
+
+<details>
+  <summary>
+    Expected output
+  </summary>
+  
+<img width="800" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/ec22fea1-026e-4511-bfee-ebb1f763842e">
+
+  </details>
 
 
 ## Azure AD configuration
