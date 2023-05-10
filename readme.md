@@ -1,16 +1,19 @@
 
 # Cisco Duo Network Gateway Raspberry PI
 
+## What is it ?
+
 This project guide you through the deployment of a Cisco Duo Network Gateway (DNG) in a lab environment. The Cisco DNG will act as a reverse proxy to secure remote access to application without any VPN.
 
 [Cisco Duo Network Gateway documentation](https://duo.com/docs/dng)
 
-## Lab architecture
 <p align="center">
 <img width="961" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/00b5ef1a-b099-4af1-a2a5-1426f23b3413">
 </p>
 
-## 1. Cisco DNG installation
+## Get started
+
+### 1. Cisco DNG installation
 
 The Cisco DNG will be installed on a Raspberry Pi 4 running Ubuntu 22.04 LTS:
 <table>
@@ -37,8 +40,7 @@ The Cisco DNG will be installed on a Raspberry Pi 4 running Ubuntu 22.04 LTS:
     </tbody>
 </table>
 
-## 1. Installation
-### 1.1 Download the Duo Network Gateway configuration file
+#### 1.1 Download the Duo Network Gateway configuration file
 ```console
 curl -JO https://dl.duosecurity.com/network-gateway-latest.yml
 ```
@@ -59,7 +61,7 @@ network-gateway-2.2.0.yml
   ```
 </details>
 
-### 1.2 Emulate a AMD64 architecture on the Raspberry (optionnal on AMD64 devices)
+#### 1.2 Emulate a AMD64 architecture on the Raspberry (optionnal on AMD64 devices)
 
 ⓘ Duo Network Gateway expect a AMD64 system, where the Raspberry is a ARCH64,
 
@@ -98,7 +100,7 @@ installing: amd64 OK
 ```
 </details>
 
-### 1.3 Run the Duo Network Gateway dockers
+#### 1.3 Run the Duo Network Gateway dockers
 
 ```console
 sudo docker compose -p network-gateway -f network-gateway-2.2.0.yml up -d
@@ -122,10 +124,10 @@ bdfc487ef00b   duosecurity/network-gateway   "docker-entrypoint.s…"   35 secon
 ```
 </details>
 
-## 2. Cisco DNG, Duo and Azure AD configuration
+### 2. Cisco DNG, Duo and Azure AD configuration
 
 
-### 2.1 Set-up the admin access to the Cisco DNG
+#### 2.1 Set-up the admin access to the Cisco DNG
 
 Connect to the Duo Network Gateway web interface `https://<Your Cisco DNG IP>:8443`
 
@@ -168,7 +170,7 @@ Enter the given password in the `Set Duo Network Gateway password`page, and set 
   </details>
 
 
-## Azure AD configuration
+### Azure AD configuration
 <table>
     <thead>
         <tr>
