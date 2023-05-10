@@ -42,9 +42,9 @@ The Cisco DNG will be installed on a Raspberry Pi 4 running Ubuntu 22.04 LTS:
 ```console
 curl -JO https://dl.duosecurity.com/network-gateway-latest.yml
 ```
-<details>
-  <summary> 
-   Expected output 
+ <details>
+   <summary> 
+       <ins>Expected output</ins>
   </summary>
   
   ```console
@@ -71,7 +71,7 @@ docker run --privileged --rm tonistiigi/binfmt --install amd64
 
 <details>
   <summary>
-    Expected output
+       <ins>Expected output</ins>
   </summary>
 
 ```console
@@ -106,7 +106,7 @@ sudo docker compose -p network-gateway -f network-gateway-2.2.0.yml up -d
 
 <details>
   <summary>
-    Expected output
+       <ins>Expected output</ins>
   </summary>
   
 ```console
@@ -127,10 +127,18 @@ bdfc487ef00b   duosecurity/network-gateway   "docker-entrypoint.s…"   35 secon
 
 ### 2.1 Set-up the admin access to the Cisco DNG
 
-Connect to the Duo Network Gateway web interface `<Your Cisco DNG IP>:8443` :
+Connect to the Duo Network Gateway web interface `<Your Cisco DNG IP>:8443`
+
+<details>
+  <summary>
+       <ins>Expected output</ins>
+  </summary>
+  
 <p align="center">
 <img width="800" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/57500786-5f9d-46c4-aaaa-3d4f309e6086">
  </p>
+
+  </details>
  
 Generate a temporary password
 ```console
@@ -138,7 +146,7 @@ sudo docker exec network-gateway-admin reset-password
 ```
 <details>
   <summary>
-    Expected output
+       <ins>Expected output</ins>
   </summary>
   
 ```console
@@ -151,7 +159,7 @@ Enter the given password in the `Set Duo Network Gateway password`page, and set 
 
 <details>
   <summary>
-    Expected output
+       <ins>Expected output</ins>
   </summary>
   
 <img width="800" alt="image" src="https://github.com/xaviervalette/cisco-duo-network-gateway-raspberry-pi/assets/28600326/ec22fea1-026e-4511-bfee-ebb1f763842e">
